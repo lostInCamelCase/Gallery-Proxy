@@ -1,2 +1,2 @@
-# MW-Proxy
+# Gallery-Proxy
 proxy
