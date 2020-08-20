@@ -1,18 +1,19 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const bodyParser = require('body-parser');
 const axios = require('axios');
 const port = 3000;
 
-app.use(express.static(path.join(__dirname, '../client/dist')));
 
-// app.get('/hello', (req,res) => {
-//   res.send('hello')
-// })
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //gallery @ port 3009
 app.get('/stay', (req, res) => {
-  axios.get("localhost:3009/stay")
+  axios.get("http://localhost:3009/stay")
     .then(response => {
       res.send(response.data);
     })
@@ -21,7 +22,7 @@ app.get('/stay', (req, res) => {
     })
 })
 app.get('/stay/ratings', (req, res) => {
-  axios.get("localhost:3009/stay/ratings")
+  axios.get("http://localhost:3009/stay/ratings")
     .then(response => {
       res.send(response.data);
     })
@@ -30,8 +31,9 @@ app.get('/stay/ratings', (req, res) => {
     })
 })
 app.get('/stay/pictures', (req, res) => {
-  axios.get("localhost:3009/stay/pictures")
+  axios.get("http://localhost:3009/stay/pictures")
     .then(response => {
+      console.log('response', response.data)
       res.send(response.data);
     })
     .catch (err => {
@@ -55,7 +57,7 @@ app.all('/rentalpricing/*', (req, res) => {
 //more places to stay @ port 8080
 
 app.get('/properties', (req, res) => {
-  axios.get("localhost:8080/properties")
+  axios.get("http://localhost:8080/properties")
     .then(response => {
       res.send(response.data);
     })
@@ -65,7 +67,7 @@ app.get('/properties', (req, res) => {
 })
 
 app.get('/lists', (req, res) => {
-  axios.get("localhost:8080/lists")
+  axios.get("http://localhost:8080/lists")
     .then(response => {
       res.send(response.data);
     })
