@@ -42,22 +42,22 @@ app.get('/stay/pictures', (req, res) => {
 })
 
 //calendar @ port 3011
-app.all('/rentalpricing/*', (req, res) => {
-  axios({
-    method: req.method,
-    url: "http://34.211.141.231/" + req.originalUrl,
-    headers: req.headers,
-    data: req.data
-  }).then((response) => {
-    res.send(response.data);
-  }).catch((err) => console.log(err));
 
+app.get('/rentalpricing/', (req, res) => {
+  axios.get("http://34.211.141.231/rentalpricing")
+    .then(response => {
+      console.log('response', response.data)
+      res.send(response.data);
+    })
+    .catch (err => {
+      console.log('error:', err);
+    })
 })
 
 //more places to stay @ port 8080
 
 app.get('/properties', (req, res) => {
-  axios.get("http://localhost:8080/properties")
+  axios.get("http://54.215.232.135/properties")
     .then(response => {
       res.send(response.data);
     })
@@ -67,7 +67,7 @@ app.get('/properties', (req, res) => {
 })
 
 app.get('/lists', (req, res) => {
-  axios.get("http://localhost:8080/lists")
+  axios.get("http://54.215.232.135/lists")
     .then(response => {
       res.send(response.data);
     })
@@ -75,16 +75,6 @@ app.get('/lists', (req, res) => {
       console.log('error:', err);
     })
 })
-// app.all('/properties/*', (req, res) => {
-//   axios({
-//     method: req.method,
-//     url: "http://localhost:8080" + req.originalUrl,
-//     headers: req.headers,
-//     data: req.data
-//   }).then((response) => {
-//     res.send(response.data);
-//   }).catch((err) => console.log(err));
-// })
 
 
 

@@ -1,0 +1,63 @@
+.imageTitle {
+  width: 100%;
+  height: 5%;
+}
+
+.p2 {
+  width: 50%;
+  height:20%;
+  margin-left: 130px
+}
+.p3 {
+  width: 50%;
+  height:20%;
+  margin-left: 130px
+}
+.p4 {
+  width: 50%;
+  height:20%;
+  margin-left: 130px
+}
+.p5 {
+  width: 80%;
+  height:20%;
+  margin-left: 130px
+}
+.p6 {
+  width: 80%;
+  height:20%;
+  margin-left: 130px
+}
+.p7 {
+  width: 80%;
+  height:20%;
+  margin-left: 130px
+}
+.p8 {
+  width: 80%;
+  height:20%;
+  margin-left: 130px
+}
+.p9 {
+  width: 80%;
+  height:20%;
+  margin-left: 130px
+}
+.div9 {
+  background-color: rgb(247, 247, 247);
+}
+
+#gallery {
+  margin-left: -5%;
+
+}
+
+.calContainer {
+  display: flex;
+}
+
+#calendar {
+  position: sticky;
+  top: 100px;
+
+}
