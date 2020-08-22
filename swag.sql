@@ -35,16 +35,14 @@ CREATE TABLE booking (
   foreign key(rentalID) references rentals(id)
 );
 
-CREATE TABLE placeToStay
-(
+CREATE TABLE placeToStay(
   id int AUTO_INCREMENT NOT NULL,
   placeName varchar (255) NOT NULL,
   location varchar (255) NOT NULL,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE pictures
-(
+CREATE TABLE pictures(
   id INT AUTO_INCREMENT NOT NULL,
   images varchar (255) NOT NULL,
   caption varchar(255) NOT NULL,
@@ -53,8 +51,7 @@ CREATE TABLE pictures
   FOREIGN KEY (stay_id) REFERENCES placeToStay(id)
 );
 
-CREATE TABLE ratings
-(
+CREATE TABLE ratings(
   id int AUTO_INCREMENT NOT NULL,
   number_Of_Reviews INT NOT NULL,
   stars DECIMAL(19 , 1) NOT NULL,

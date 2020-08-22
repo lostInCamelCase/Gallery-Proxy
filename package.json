@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "proxy server",
   "scripts": {
-    "start": "nodemon ./server/server.js"
+    "start": "nodemon ./server/server.js",
+    "seed-data": "node ./seed.js",
+    "seed": "mysql -u root -p < swag.sql"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,7 @@
     "axios": "^0.19.2",
     "express": "^4.17.1",
     "http-proxy": "^1.18.1",
+    "mysql": "^2.18.1",
     "nodemon": "^2.0.4"
   }
 }

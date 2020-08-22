@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 //gallery @ port 3009
 app.get('/stay', (req, res) => {
-  axios.get("http://localhost:3009/stay")
+  axios.get("http://3.101.80.128/stay")
     .then(response => {
       res.send(response.data);
     })
@@ -22,7 +22,7 @@ app.get('/stay', (req, res) => {
     })
 })
 app.get('/stay/ratings', (req, res) => {
-  axios.get("http://localhost:3009/stay/ratings")
+  axios.get("http://3.101.80.128/stay/ratings")
     .then(response => {
       res.send(response.data);
     })
@@ -31,7 +31,7 @@ app.get('/stay/ratings', (req, res) => {
     })
 })
 app.get('/stay/pictures', (req, res) => {
-  axios.get("http://localhost:3009/stay/pictures")
+  axios.get("http://3.101.80.128/stay/pictures")
     .then(response => {
       console.log('response', response.data)
       res.send(response.data);
@@ -45,7 +45,7 @@ app.get('/stay/pictures', (req, res) => {
 app.all('/rentalpricing/*', (req, res) => {
   axios({
     method: req.method,
-    url: "http://localhost:3011" + req.originalUrl,
+    url: "http://34.211.141.231/" + req.originalUrl,
     headers: req.headers,
     data: req.data
   }).then((response) => {
